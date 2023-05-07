@@ -1,0 +1,36 @@
+/* extraSmall: '@media (max-width: 47.94em)'; <= 767px */
+/* small: '@media (min-width: 48em) and (max-width: 63.94em)'; >= 768px && <= 1023 */
+/* medium: '@media (min-width: 64em) and (max-width: 89.94em)'; >= 1024 && <= 1439 */
+/* large: '@media (min-width: 90em)'; >= 1440px */
+/* gteSmall: '@media (min-width: 48em)'; >= 768px */
+/* gteMedium: '@media (min-width: 64em)'; >= 1024px */
+/* lteSmall: '@media (max-width: 63.94em)'; <= 1023px */
+/* lteMedium: '@media (max-width: 89.94em)'; <= 1439px */
+
+body {
+  background-color: rgb(85, 131, 206);
+  margin: 0;
+}
+
+#gameIntro {
+  background-color: rgb(166, 86, 86);
+  height: 98vh;
+  margin: 1vh;
+}
+
+#gameBoard {
+  position: relative;
+  background-color: rgb(71, 149, 71);
+  height: 98vh;
+  margin: 1vh;
+}
+
+#stopButton {
+  position: absolute;
+}
+
+#gameCanvas {
+  background-color: gold;
+  height: 98vh;
+  width: 100%;
+}
