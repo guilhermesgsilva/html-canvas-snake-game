@@ -8,7 +8,7 @@
 /* lteMedium: '@media (max-width: 89.94em)'; <= 1439px */
 
 body {
-  background-color: rgb(85, 131, 206);
+  background-color: #5583ce;
   margin: 0;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 #gameCanvas {
-  background-color: gold;
+  background-color: rgb(236, 190, 92);
   height: 98vh;
   width: 100%;
 }
