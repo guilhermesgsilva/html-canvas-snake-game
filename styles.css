@@ -1,11 +1,10 @@
-/* extraSmall: '@media (max-width: 47.94em)'; <= 767px */
-/* small: '@media (min-width: 48em) and (max-width: 63.94em)'; >= 768px && <= 1023 */
-/* medium: '@media (min-width: 64em) and (max-width: 89.94em)'; >= 1024 && <= 1439 */
-/* large: '@media (min-width: 90em)'; >= 1440px */
-/* gteSmall: '@media (min-width: 48em)'; >= 768px */
-/* gteMedium: '@media (min-width: 64em)'; >= 1024px */
-/* lteSmall: '@media (max-width: 63.94em)'; <= 1023px */
-/* lteMedium: '@media (max-width: 89.94em)'; <= 1439px */
+/* small/mobile: '@media (max-width: 600px)'; canvas < (360 × 640) */
+
+/* medium/tablet: '@media (min-width: 601px) and (max-width: 1279px)'; canvas < (601 x 962) */
+
+/* large/desktop: '@media (min-width: 1280px)'; canvas < (1280 × 720) */
+
+/* https://www.hobo-web.co.uk/best-screen-size/ */
 
 body {
   background-color: #5583ce;
@@ -14,15 +13,11 @@ body {
 
 #gameIntro {
   background-color: rgb(166, 86, 86);
-  height: 98vh;
-  margin: 1vh;
 }
 
 #gameBoard {
   position: relative;
   background-color: rgb(71, 149, 71);
-  height: 98vh;
-  margin: 1vh;
 }
 
 #stopButton {
@@ -31,6 +26,19 @@ body {
 
 #gameCanvas {
   background-color: rgb(236, 190, 92);
-  height: 98vh;
-  width: 100%;
+
+  @media (max-width: 600px) {
+    width: 360px;
+    height: 640px;
+  }
+
+  @media (min-width: 601px) and (max-width: 1279px) {
+    width: 601px;
+    height: 962px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1280px;
+    height: 720px;
+  }
 }
