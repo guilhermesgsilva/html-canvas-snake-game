@@ -21,6 +21,7 @@ function fix_dpi() {
 }
 
 let currentGame;
+let frames = 0;
 
 document.getElementById("gameBoard").style.display = "none";
 
@@ -32,6 +33,7 @@ document.getElementById("startButton").onclick = () => {
 };
 
 document.getElementById("stopButton").onclick = () => {
+  endGame();
   document.getElementById("gameBoard").style.display = "none";
   document.getElementById("gameIntro").style.display = "block";
 };
@@ -40,4 +42,17 @@ function startGame() {
   currentGame = new Game();
   currentGame.player = new Player();
   currentGame.player.draw();
+  cancelAnimationFrame(currentGame.animationId);
+  updateCanvas();
+}
+
+function updateCanvas() {
+  frames++;
+  context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+  currentGame.player.draw();
+  currentGame.animationId = requestAnimationFrame(updateCanvas);
+}
+
+function endGame() {
+  cancelAnimationFrame(currentGame.animationId);
 }
