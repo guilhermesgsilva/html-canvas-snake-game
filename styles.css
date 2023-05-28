@@ -24,7 +24,7 @@ body {
   position: absolute;
 }
 
-#gameCanvas {
+#canvas {
   background-color: rgb(236, 190, 92);
 
   @media (max-width: 600px) {

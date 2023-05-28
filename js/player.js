@@ -8,7 +8,8 @@ class Player {
   }
 
   draw() {
-    gameContext.fillStyle = this.color;
-    gameContext.fillRect(this.x, this.y, this.width, this.height);
+    fix_dpi();
+    context.fillStyle = this.color;
+    context.fillRect(this.x, this.y, this.width, this.height);
   }
 }
