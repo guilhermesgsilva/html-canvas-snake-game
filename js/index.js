@@ -49,6 +49,7 @@ function startGame() {
 function updateCanvas() {
   frames++;
   context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+  currentGame.player.move();
   currentGame.player.draw();
   currentGame.animationId = requestAnimationFrame(updateCanvas);
 }
