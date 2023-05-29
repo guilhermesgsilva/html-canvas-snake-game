@@ -1,11 +1,13 @@
 class Snake {
-  constructor() {
-    this.width = 100;
-    this.height = 100;
-    this.x = 0;
-    this.y = 0;
+  constructor(game) {
+    this.game = game;
+    this.x = 200;
+    this.y = 200;
+    this.width = this.game.gridUnit;
+    this.height = this.game.gridUnit;
     this.color = "black";
-    this.changeOnX = 10;
+    this.velocity = this.game.gridUnit / 10;
+    this.changeOnX = this.velocity;
     this.changeOnY = 0;
   }
 
@@ -26,7 +28,7 @@ class Snake {
   }
 
   draw() {
-    fix_dpi();
+    fixDpi();
     context.fillStyle = this.color;
     context.fillRect(this.x, this.y, this.width, this.height);
   }
@@ -35,14 +37,48 @@ class Snake {
     this.x = this.x + this.changeOnX;
     this.y = this.y + this.changeOnY;
 
-    if (this.left() > canvas.width - this.width) {
+    if (this.left() > canvas.width) {
       this.x = 0;
-    } else if (this.right() <= 0) {
-      this.x = canvas.width - this.width;
-    } else if (this.top() < 0) {
-      this.y = canvas.height - this.height;
-    } else if (this.bottom() > this.height) {
+    } else if (this.right() < 0) {
+      this.x = canvas.width;
+    } else if (this.top() > canvas.height) {
       this.y = 0;
+    } else if (this.bottom() < 0) {
+      this.y = canvas.height;
     }
+  }
+
+  changeDirection() {
+    window.addEventListener("keydown", (event) => {
+      switch (event.key) {
+        case "ArrowUp":
+          if (this.changeOnY === 0) {
+            this.changeOnY = -this.velocity;
+            this.changeOnX = 0;
+          }
+          break;
+        case "ArrowDown":
+          console.log(this);
+          if (this.changeOnY === 0) {
+            this.changeOnY = this.velocity;
+            this.changeOnX = 0;
+          }
+          break;
+        case "ArrowRight":
+          if (this.changeOnX === 0) {
+            this.changeOnX = this.velocity;
+            this.changeOnY = 0;
+          }
+          break;
+        case "ArrowLeft":
+          if (this.changeOnX === 0) {
+            this.changeOnX = -this.velocity;
+            this.changeOnY = 0;
+          }
+          break;
+        default:
+          break;
+      }
+    });
   }
 }

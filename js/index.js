@@ -7,7 +7,7 @@ const context = canvas.getContext("2d");
 
 const dpi = window.devicePixelRatio;
 
-function fix_dpi() {
+function fixDpi() {
   let style = {
     height() {
       return +getComputedStyle(canvas).getPropertyValue("height").slice(0, -2);
@@ -40,7 +40,7 @@ document.getElementById("stopButton").onclick = () => {
 
 function startGame() {
   currentGame = new Game();
-  currentGame.snake = new Snake();
+  currentGame.snake = new Snake(currentGame);
   currentGame.snake.draw();
   cancelAnimationFrame(currentGame.animationId);
   updateCanvas();
@@ -49,6 +49,7 @@ function startGame() {
 function updateCanvas() {
   frames++;
   context.clearRect(0, 0, canvas.width, canvas.height);
+  currentGame.snake.changeDirection();
   currentGame.snake.move();
   currentGame.snake.draw();
   currentGame.animationId = requestAnimationFrame(updateCanvas);
