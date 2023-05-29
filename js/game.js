@@ -2,7 +2,7 @@ console.log("game.js link");
 
 class Game {
   constructor() {
-    this.player = {};
+    this.snake = {};
     this.animationId = null;
   }
 }

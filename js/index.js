@@ -40,20 +40,21 @@ document.getElementById("stopButton").onclick = () => {
 
 function startGame() {
   currentGame = new Game();
-  currentGame.player = new Player();
-  currentGame.player.draw();
+  currentGame.snake = new Snake();
+  currentGame.snake.draw();
   cancelAnimationFrame(currentGame.animationId);
   updateCanvas();
 }
 
 function updateCanvas() {
   frames++;
-  context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-  currentGame.player.move();
-  currentGame.player.draw();
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  currentGame.snake.move();
+  currentGame.snake.draw();
   currentGame.animationId = requestAnimationFrame(updateCanvas);
 }
 
 function endGame() {
   cancelAnimationFrame(currentGame.animationId);
+  frames = 0;
 }
