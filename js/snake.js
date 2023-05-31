@@ -6,7 +6,7 @@ class Snake {
     this.width = this.game.gridUnit;
     this.height = this.game.gridUnit;
     this.color = "black";
-    this.velocity = this.game.gridUnit / 10;
+    this.velocity = this.game.gridUnit / 2;
     this.changeOnX = this.velocity;
     this.changeOnY = 0;
   }

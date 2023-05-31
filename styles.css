@@ -1,44 +1,36 @@
-/* small/mobile: '@media (max-width: 600px)'; canvas < (360 × 640) */
-
-/* medium/tablet: '@media (min-width: 601px) and (max-width: 1279px)'; canvas < (601 x 962) */
-
-/* large/desktop: '@media (min-width: 1280px)'; canvas < (1280 × 720) */
-
-/* https://www.hobo-web.co.uk/best-screen-size/ */
-
 body {
   background-color: #5583ce;
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #gameIntro {
   background-color: rgb(166, 86, 86);
+  width: 94vw;
+  height: 94vh;
 }
 
 #gameBoard {
   position: relative;
   background-color: rgb(71, 149, 71);
+  width: 94vw;
+  height: 94vh;
 }
 
 #stopButton {
   position: absolute;
+  /* left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto; */
 }
 
 #canvas {
   background-color: rgb(236, 190, 92);
-
-  @media (max-width: 600px) {
-    width: 360px;
-    height: 640px;
-  }
-
-  @media (min-width: 601px) and (max-width: 1279px) {
-    width: 601px;
-    height: 962px;
-  }
-
-  @media (min-width: 1280px) {
-    width: 1280px;
-    height: 720px;
-  }
+  width: 100%;
+  height: 100%;
 }
