@@ -36,6 +36,7 @@ document.getElementById("stopButton").onclick = () => {
   endGame();
   document.getElementById("gameBoard").style.display = "none";
   document.getElementById("gameIntro").style.display = "block";
+  document.getElementById("gameIntro").style.display = "flex";
 };
 
 function startGame() {
