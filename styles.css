@@ -1,5 +1,5 @@
 body {
-  background-color: #5583ce;
+  background-color: black;
   margin: 0;
   height: 100vh;
   display: flex;
@@ -9,8 +9,8 @@ body {
 
 #gameIntro {
   background-color: rgb(166, 86, 86);
-  width: 94vw;
-  height: 94vh;
+  width: 99vw;
+  height: 99vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,8 +19,8 @@ body {
 #gameBoard {
   position: relative;
   background-color: rgb(71, 149, 71);
-  width: 94vw;
-  height: 94vh;
+  width: 99vw;
+  height: 99vh;
 }
 
 #buttonsWrapper {
