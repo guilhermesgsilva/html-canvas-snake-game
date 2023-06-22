@@ -3,11 +3,11 @@ console.log("obstale.js link");
 class Obstacle {
   constructor(game) {
     this.game = game;
-    this.width = this.game.gridUnit * 10;
-    this.height = this.game.gridUnit * 10;
+    this.width = this.game.gridUnit;
+    this.height = this.game.gridUnit;
     this.x = Math.floor(Math.random() * (canvas.width - this.width));
     this.y = Math.floor(Math.random() * (canvas.height - this.height));
-    this.color = "black";
+    this.color = "green";
   }
 
   left() {
