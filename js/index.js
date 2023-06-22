@@ -41,6 +41,8 @@ document.getElementById("stopButton").onclick = () => {
 
 function startGame() {
   currentGame = new Game();
+  currentGame.obstacle = new Obstacle(currentGame);
+  currentGame.obstacle.draw();
   currentGame.snake = new Snake(currentGame);
   currentGame.snake.draw();
   cancelAnimationFrame(currentGame.animationId);
@@ -50,6 +52,7 @@ function startGame() {
 function updateCanvas() {
   frames++;
   context.clearRect(0, 0, canvas.width, canvas.height);
+  currentGame.obstacle.draw();
   currentGame.snake.changeDirection();
   currentGame.snake.move();
   currentGame.snake.draw();

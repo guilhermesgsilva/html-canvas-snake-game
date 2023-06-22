@@ -1,3 +1,5 @@
+console.log("snake.js link");
+
 class Snake {
   constructor(game) {
     this.game = game;
@@ -58,7 +60,6 @@ class Snake {
           }
           break;
         case "ArrowDown":
-          console.log(this);
           if (this.changeOnY === 0) {
             this.changeOnY = this.velocity;
             this.changeOnX = 0;
