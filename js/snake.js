@@ -30,7 +30,6 @@ class Snake {
   }
 
   draw() {
-    fixDpi();
     context.fillStyle = this.color;
     context.fillRect(this.x, this.y, this.width, this.height);
   }

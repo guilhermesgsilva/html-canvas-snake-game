@@ -21,7 +21,7 @@ function fixDpi() {
 }
 
 let currentGame;
-let frames = 0;
+/* let frames = 0; */
 
 document.getElementById("gameBoard").style.display = "none";
 
@@ -40,6 +40,7 @@ document.getElementById("stopButton").onclick = () => {
 };
 
 function startGame() {
+  fixDpi();
   currentGame = new Game();
   currentGame.obstacle = new Obstacle(currentGame);
   currentGame.snake = new Snake(currentGame);
@@ -48,12 +49,12 @@ function startGame() {
 }
 
 function updateCanvas() {
-  frames++;
+  /* frames++; */
   context.clearRect(0, 0, canvas.width, canvas.height);
+  currentGame.obstacle.draw();
   currentGame.snake.changeDirection();
   currentGame.snake.move();
   currentGame.snake.draw();
-  currentGame.obstacle.draw();
   currentGame.animationId = requestAnimationFrame(updateCanvas);
 }
 
